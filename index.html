@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Bir Tarraz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3d2b1f; /* Brun Expresso */
+            --gold: #c5a059;    /* Or */
+            --light: #fdfaf5;   /* Crème */
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light);
+            color: var(--primary);
+            margin: 0; padding: 0; text-align: center;
+        }
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 5px solid var(--gold);
+        }
+        .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+        .container { padding: 20px; max-width: 500px; margin: auto; }
+        .btn {
+            display: flex; align-items: center; justify-content: center;
+            background: white; color: var(--primary);
+            padding: 18px; margin-bottom: 15px;
+            text-decoration: none; border-radius: 12px;
+            font-weight: 600; border: 1px solid #ddd;
+            transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .btn i { margin-right: 15px; color: var(--gold); font-size: 20px; }
+        .btn:active { transform: scale(0.98); background: var(--gold); color: white; }
+        .promo {
+            background: var(--gold); color: white;
+            padding: 15px; border-radius: 12px; margin: 20px 0;
+            font-size: 14px;
+        }
+        .footer { margin-top: 30px; font-size: 12px; opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">BIR TARRAZ</div>
+        <p>Café & Restaurant</p>
+    </div>
+
+    <div class="container">
+        <div class="promo">
+            <strong>🎁 OFFRE :</strong> 10ème café offert ! Demandez votre carte.
+        </div>
+
+        <a href="#" class="btn"><i class="fas fa-utensils"></i> Notre Carte Restaurant</a>
+        <a href="#" class="btn"><i class="fas fa-coffee"></i> Espace Café & Boissons</a>
+        <a href="https://www.facebook.com/CafeBirTarraz/" class="btn"><i class="fab fa-facebook"></i> Nous suivre sur Facebook</a>
+        <a href="#" class="btn"><i class="fas fa-map-marker-alt"></i> Localisation (Maps)</a>
+
+        <div class="footer">
+            &copy; 2026 Bir Tarraz - Design by [Ton Nom]
+        </div>
+    </div>
+
+</body>
+</html>
