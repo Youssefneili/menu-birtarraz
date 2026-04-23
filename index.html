@@ -1,69 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Bir Tarraz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Digital - Bir Tarraz</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary: #3d2b1f; /* Brun Expresso */
-            --gold: #c5a059;    /* Or */
-            --light: #fdfaf5;   /* Crème */
-        }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--light);
-            color: var(--primary);
-            margin: 0; padding: 0; text-align: center;
-        }
-        .header {
-            background: var(--primary);
-            color: white;
-            padding: 40px 20px;
-            border-bottom: 5px solid var(--gold);
-        }
-        .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
-        .container { padding: 20px; max-width: 500px; margin: auto; }
-        .btn {
-            display: flex; align-items: center; justify-content: center;
-            background: white; color: var(--primary);
-            padding: 18px; margin-bottom: 15px;
-            text-decoration: none; border-radius: 12px;
-            font-weight: 600; border: 1px solid #ddd;
-            transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .btn i { margin-right: 15px; color: var(--gold); font-size: 20px; }
-        .btn:active { transform: scale(0.98); background: var(--gold); color: white; }
-        .promo {
-            background: var(--gold); color: white;
-            padding: 15px; border-radius: 12px; margin: 20px 0;
-            font-size: 14px;
-        }
-        .footer { margin-top: 30px; font-size: 12px; opacity: 0.7; }
+      :root {
+        /* Palette de couleurs inspirée par ton logo */
+        --primary: #285c9c; /* Le bleu profond de tes portes */
+        --text: #333333; /* Gris foncé pour la lisibilité */
+        --light: #ffffff; /* Blanc des murs */
+        --bg: #f1f1f1; /* Gris très clair pour le fond */
+        --gold: #c5a059; /* L'accent Or (Luxe/Promo) */
+      }
+
+      /* --- Global --- */
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-wrapper {
+        max-width: 480px; /* Largeur d'un téléphone */
+        width: 100%;
+        background-color: var(--light);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --- Header Section --- */
+      .header {
+        background-color: var(--light);
+        color: var(--primary);
+        padding: 50px 20px;
+        text-align: center;
+        border-bottom: 3px solid var(--primary);
+      }
+
+      .logo-container {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--light);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        /* Ajoute un petit décalage pour l'effet 3D de ton logo */
+      }
+
+      .logo-img {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 50%;
+      }
+
+      .cafe-name {
+        font-family: "Playfair Display", serif; /* Élégance */
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .tagline {
+        font-size: 14px;
+        font-weight: 300;
+        opacity: 0.8;
+        margin: 5px 0 0;
+      }
+
+      /* --- Main Content --- */
+      .container {
+        padding: 30px 20px 60px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* --- Promo Section (Or) --- */
+      .promo {
+        background-color: var(--gold);
+        color: white;
+        padding: 18px 25px;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
+      }
+
+      .promo i {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* --- Boutons de Menu (Bleu) --- */
+      .btn {
+        display: flex;
+        align-items: center;
+        background-color: var(--primary);
+        color: var(--light);
+        padding: 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(40, 92, 156, 0.1);
+      }
+
+      .btn:hover,
+      .btn:active {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(40, 92, 156, 0.2);
+        background-color: #1f477a; /* Bleu plus foncé au survol */
+      }
+
+      .btn-icon-bg {
+        width: 45px;
+        height: 45px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-icon-bg i {
+        font-size: 20px;
+        color: var(--light);
+      }
+
+      .btn-text {
+        font-size: 16px;
+        flex-grow: 1;
+      }
+      .btn-arrow {
+        font-size: 14px;
+        opacity: 0.6;
+      }
+
+      /* --- Réseaux Sociaux & Infos --- */
+      .separator {
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.05);
+        margin: 20px 0;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--light);
+        color: var(--text);
+        padding: 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: background-color 0.2s;
+      }
+
+      .social-btn i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+      .social-btn:active {
+        background-color: #fafafa;
+      }
+      .fb i {
+        color: #1877f2;
+      } /* Bleu Facebook */
+      .insta i {
+        color: #e4405f;
+      } /* Rose Instagram */
+
+      /* --- Footer --- */
+      .footer {
+        padding: 20px;
+        background-color: var(--bg);
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.6;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="phone-wrapper">
+      <div class="header">
+        <div class="logo-container">
+          <img src="./277569619_492774752389101_2198174348086464557_n.png" alt="Logo Bir Tarraz" class="logo-img" />
+        </div>
+        <h1 class="cafe-name">Bir Tarraz</h1>
+        <p class="tagline">Café - Restaurant </p>
+      </div>
 
-    <div class="header">
-        <div class="logo">BIR TARRAZ</div>
-        <p>Café & Restaurant</p>
-    </div>
-
-    <div class="container">
+      <div class="container">
         <div class="promo">
-            <strong>🎁 OFFRE :</strong> 10ème café offert ! Demandez votre carte.
+          <i class="fas fa-gift"></i>
+          <div>
+            <strong>Offre Fidélité :</strong><br />
+            La 10ème consommation est offerte !
+          </div>
         </div>
 
-        <a href="#" class="btn"><i class="fas fa-utensils"></i> Notre Carte Restaurant</a>
-        <a href="#" class="btn"><i class="fas fa-coffee"></i> Espace Café & Boissons</a>
-        <a href="https://www.facebook.com/CafeBirTarraz/" class="btn"><i class="fab fa-facebook"></i> Nous suivre sur Facebook</a>
-        <a href="#" class="btn"><i class="fas fa-map-marker-alt"></i> Localisation (Maps)</a>
+        <a href="./restaurant.html" class="btn">
+          <div class="btn-icon-bg"><i class="fas fa-utensils"></i></div>
+          <div class="btn-text">Notre Carte Restaurant</div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
 
-        <div class="footer">
-            &copy; 2026 Bir Tarraz - Design by [Ton Nom]
+        <a href="./cafe.html" class="btn">
+          <div class="btn-icon-bg"><i class="fas fa-coffee"></i></div>
+          <div class="btn-text">Espace Café & Boissons</div>
+          <i class="fas fa-chevron-right btn-arrow"></i>
+        </a>
+
+        <div class="separator"></div>
+          <div
+            class="btn-icon-bg"
+            style="background-color: rgba(40, 92, 156, 0.1)"
+          >
+            <i class="fas fa-map-marker-alt" style="color: var(--primary)"></i>
+          </div>        
+         <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.374296638489!2d10.270819575567426!3d36.76158726987561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd493dbef0473f%3A0x5cdb78133ba12818!2sCaf%C3%A9%20Bir%20Tarraz!5e0!3m2!1sfr!2snl!4v1775643537424!5m2!1sfr!2snl"
+          width="450"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        <div class="social-grid">
+          <a
+            href="https://www.facebook.com/CafeBirTarraz/"
+            class="social-btn fb"
+          >
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/caferestobirtarraz/" class="social-btn insta">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
         </div>
+    
+      </div>
+
+      <div class="footer">
+        &copy; 2026 Bir Tarraz - Tradition de Tunis<br />
+        By NEILI Youssef      </div>
     </div>
-
-</body>
+  </body>
 </html>
